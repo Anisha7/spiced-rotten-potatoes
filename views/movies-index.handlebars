@@ -1,0 +1,12 @@
+<!-- movies-index.handlebars -->
+
+<h1>Hello Movies</h1>
+
+<div class="row">
+  {{#each movies}}
+    <div class="col-sm-3">
+      <h2><a href="/movies/{{this.id}}">{{this.title}}</a></h2>
+      
+    </div>
+  {{/each}}
+</div>

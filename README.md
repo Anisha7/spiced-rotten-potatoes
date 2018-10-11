@@ -1,1 +1,3 @@
-# spiced-rotten-potatoes
+# rotten-potatoes
+
+// run nodemon start.js in terminal

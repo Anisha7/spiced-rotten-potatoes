@@ -1,0 +1,30 @@
+
+
+<div class="text-right">
+    <a href="/movies/{{movie.id}}/reviews/new" class="btn btn-primary">Write Review</a>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <img class="img-responsive" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
+    </div>
+    <div class="col-sm-8">
+        <h1>{{movie.title}}</h1>
+        <p class="lead">{{movie.overview}}</p>
+    </div>
+    <div class="embed-responsive embed-responsive-21by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{movie.trailer_youtube_id}}?rel=0"></iframe>
+    </div>
+
+    <h3>Reviews</h3>
+        {{#each reviews}}
+        <div>
+          <h1><a href="/movies/{{this.movieId}}/reviews/{{this._id}}">{{this.title}}</a></h1>
+          <h2>{{this.movieTitle}}</h2>
+          <p>{{this.description}}</p>
+          <p><a href="/movies/{{this.movieId}}/reviews/{{this._id}}/edit">Edit</a></p>
+          <p><form method="POST" action="/movies/{{this.movieId}}/reviews/{{this._id}}?_method=DELETE">
+              <button class="btn btn-primary" type="submit">Delete</button>
+          </form></p>
+        </div>
+        {{/each}}
